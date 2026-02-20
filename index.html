@@ -3,6 +3,65 @@
 <head>
     
     <style>
+        .popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  width: 90%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  background: #f2f2f2;
+  font-weight: bold;
+}
+
+.popup-header button {
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+.popup-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-links a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.popup-hide {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #e53935;
+  color: #fff;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
 .notice-box {
     width: 100%;
     padding: 18px;
@@ -41,6 +100,44 @@ header{background:linear-gradient(90deg,#5f5fff,#7a5fff);color:white;padding:15p
 </head>
 
 <body>
+    <script>
+function dongPopup() {
+  document.getElementById("popupThongBao").style.display = "none";
+}
+
+function an2Gio() {
+  localStorage.setItem("tatThongBao", Date.now());
+  dongPopup();
+}
+
+window.onload = function() {
+  let tat = localStorage.getItem("tatThongBao");
+  if (tat && (Date.now() - tat < 2 * 60 * 60 * 1000)) {
+    dongPopup();
+  }
+};
+    </script>
+    <!-- Popup Thông Báo -->
+<div id="popupThongBao" class="popup-overlay">
+  <div class="popup-box">
+    <div class="popup-header">
+      <span>🔔 Thông Báo</span>
+      <button onclick="dongPopup()">✕</button>
+    </div>
+
+    <div class="popup-content">
+      <h2>📢 Thông báo</h2>
+      <p>Vui lòng chọn phiên bản phù hợp để tải ứng dụng mới nhất.</p>
+
+      <div class="popup-links">
+        <a href="#">🍎 Tải phiên bản iOS</a>
+        <a href="#">🤖 Tải phiên bản Android</a>
+      </div>
+    </div>
+
+    <button class="popup-hide" onclick="an2Gio()">Không hiển thị lại trong 2 giờ</button>
+  </div>
+</div>
 <div class="notice-box">
     <div class="notice-header">
         ⚠️ THÔNG BÁO QUAN TRỌNG
