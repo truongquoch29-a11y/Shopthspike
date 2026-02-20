@@ -1,102 +1,37 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chi tiết ACC</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 400px;
-    margin: 20px auto;
-    background: #fff;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Slider ảnh */
-.slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.slider img {
-    width: 100%;
-    border-radius: 10px;
-    display: none;
-}
-
-.slider img.active {
-    display: block;
-}
-
-/* Description */
-.description {
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-/* Nút mua */
-.btn-buy {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    padding: 12px;
-    background: linear-gradient(to right, #5b5be0, #7a5be0);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết ACC</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
 
-    <div class="slider">
-        <img src="images/A1m1.jpg" class="active">
-        <img src="images/A2m2.jpg">
-        <img src="images/A3m3.jpg">
-        <img src="images/A4m4.jpg">
-        <img src="images/A5m5.jpg">
+    <!-- Gallery 5 ảnh -->
+    <div class="image-gallery">
+        <img src="images/A1m1.jpg" alt="Ảnh 1">
+        <img src="images/A2m2.jpg" alt="Ảnh 2">
+        <img src="images/A3m3.jpg" alt="Ảnh 3">
+        <img src="images/A4m4.jpg" alt="Ảnh 4">
+        <img src="images/A5m5.jpg" alt="Ảnh 5">
     </div>
 
+    <!-- Description -->
     <div class="description">
-        <h3>Mô tả ACC</h3>
+        <h2>Mô tả ACC</h2>
         <p>
-        ACC Nishikawa S+  
-        13.000 VBALL  
-        8.000.000 GOLD  
-        Bảo hành 10 ngày  
-        Tài khoản full nâng cấp.
+            ACC Nishikawa S+ 13.000 VBALL 8.000.000 GOLD.
+            Bảo hành 10 ngày. Tài khoản full nâng cấp.
         </p>
     </div>
 
-    <a href="buy.html" class="btn-buy">MUA NGAY</a>
+    <!-- Button -->
+    <a href="buy.html" class="buy-btn">MUA NGAY</a>
 
 </div>
-
-<script>
-let index = 0;
-const images = document.querySelectorAll(".slider img");
-
-setInterval(() => {
-    images[index].classList.remove("active");
-    index = (index + 1) % images.length;
-    images[index].classList.add("active");
-}, 2500);
-</script>
 
 </body>
 </html>
