@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Acc Game</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+header {
+    background: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1c1c1c;
+    border-radius: 10px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.info {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.price {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #00ff88;
+    font-weight: bold;
+}
+
+.status {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.available {
+    color: #00ff88;
+}
+
+.sold {
+    color: red;
+}
+
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #00ff88;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+    margin-top: 20px;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>SHOP ACC GAME</header>
+
+<div class="container">
+
+<!-- ACC 1 -->
+<div class="card">
+    <img src="https://via.placeholder.com/400x250" alt="Acc Image">
+    <div class="title">Acc Rank Cao</div>
+    <div class="info">
+        Game: Tên Game<br>
+        Server: VN<br>
+        Level: 70<br>
+        Skin: 30
+    </div>
+    <div class="price">500.000đ</div>
+    <div class="status available">Còn hàng</div>
+    <a href="https://m.me/yourfacebookpage" target="_blank">
+        <button>IB Mua</button>
+    </a>
+</div>
+
+<!-- ACC 2 -->
+<div class="card">
+    <img src="https://via.placeholder.com/400x250" alt="Acc Image">
+    <div class="title">Acc Full Skin</div>
+    <div class="info">
+        Game: Tên Game<br>
+        Server: Asia<br>
+        Level: 90<br>
+        Skin: 50
+    </div>
+    <div class="price">1.000.000đ</div>
+    <div class="status sold">Đã bán</div>
+    <button disabled>Đã bán</button>
+</div>
+
+</div>
+
+<footer>
+Liên hệ: Messenger / Zalo của bạn
+</footer>
+
+</body>
+</html>
