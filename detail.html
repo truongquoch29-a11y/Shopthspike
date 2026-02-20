@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi tiết acc</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#f2f2f2;padding:15px}
+.card{background:white;border-radius:10px;padding:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+img{width:100%;border-radius:8px}
+.price{color:#ff9800;font-size:20px;font-weight:bold;margin:10px 0}
+.btn{display:block;text-align:center;padding:12px;margin-top:10px;border-radius:6px;background:linear-gradient(90deg,#5f5fff,#7a5fff);color:white;text-decoration:none;font-weight:bold}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="content"></div>
+
+<script>
+const data = {
+1:{
+name:"ACC NISHIKAWA S+",
+price:"450.000đ",
+img:"images/acc1.jpg",
+info:["13.000 VBALL","8.000.000 GOLD","Bảo hành 10 ngày"]
+},
+2:{
+name:"ACC RAUL S+",
+price:"550.000đ",
+img:"images/acc2.jpg",
+info:["13.000 VBALL","Skin Isabel","Bảo hành 10 ngày"]
+}
+};
+
+const id = new URLSearchParams(window.location.search).get("id");
+const acc = data[id];
+
+if(acc){
+document.getElementById("content").innerHTML = `
+<img src="${acc.img}">
+<h2>${acc.name}</h2>
+<div class="price">${acc.price}</div>
+<ul>${acc.info.map(i=>"<li>"+i+"</li>").join("")}</ul>
+<a class="btn" href="buy.html?id=${id}">MUA NGAY</a>
+`;
+}
+</script>
+
+</body>
+</html>
