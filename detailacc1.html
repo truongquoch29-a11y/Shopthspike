@@ -7,7 +7,7 @@
 
 <style>
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background: #f2f2f2;
     margin: 0;
 }
@@ -16,37 +16,27 @@ body {
     max-width: 500px;
     margin: 20px auto;
     padding: 15px;
-    background: white;
+    background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Khung ảnh */
-.slider {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 15px;
-    margin-bottom: 15px;
-}
-
-.slides {
-    display: flex;
-    width: 500%;
-    transition: 0.5s ease;
-}
-
-.slides img {
+/* Ảnh xếp dọc cùng kích thước */
+.image-gallery img {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 12px;
 }
 
 /* Description */
 .description {
-    margin-top: 10px;
+    margin-top: 15px;
+    line-height: 1.5;
 }
 
+/* Nút mua */
 .buy-btn {
     display: block;
     text-align: center;
@@ -65,41 +55,31 @@ body {
 
 <div class="container">
 
-    <!-- 5 ảnh -->
-    <div class="slider">
-        <div class="slides">
-            <img src="images/A1m1.jpg">
-            <img src="images/A2m2.jpg">
-            <img src="images/A3m3.jpg">
-            <img src="images/A4m4.jpg">
-            <img src="images/A5m5.jpg">
-        </div>
+    <!-- 5 ảnh xếp dọc -->
+    <div class="image-gallery">
+        <img src="images/A1m1.jpg">
+        <img src="images/A1m2.jpg">
+        <img src="images/A1m3.jpg">
+        <img src="images/A1m4.jpg">
+        <img src="images/A1m5.jpg">
     </div>
 
     <!-- Description -->
     <div class="description">
-        <h2>Mô tả ACC</h2>
+        <h2>Mô tả ACC 1</h2>
         <p>
-            ACC Nishikawa S+ 13.000 VBALL 8.000.000 GOLD.
-            Bảo hành 10 ngày. Tài khoản full nâng cấp.
+            ACC Nishikawa S+ <br>
+            13.000 VBALL <br>
+            8.000.000 GOLD <br>
+            Bảo hành 10 ngày. <br>
+            Tài khoản full nâng cấp.
         </p>
     </div>
 
-    <!-- Nút mua -->
+    <!-- Nút mua ngay -->
     <a href="buy.html" class="buy-btn">MUA NGAY</a>
 
 </div>
-
-<script>
-let index = 0;
-const slides = document.querySelector('.slides');
-const total = slides.children.length;
-
-setInterval(() => {
-    index = (index + 1) % total;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-}, 3000);
-</script>
 
 </body>
 </html>
