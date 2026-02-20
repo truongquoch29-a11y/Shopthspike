@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mua acc</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#f2f2f2;padding:20px}
+.box{background:white;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+.code{font-size:22px;font-weight:bold;color:red;margin:10px 0}
+a{color:#5f5fff;font-weight:bold}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="buy"></div>
+
+<script>
+const codes={
+1:"ACC001-NISHI",
+2:"ACC002-RAUL"
+};
+
+const id=new URLSearchParams(window.location.search).get("id");
+
+if(codes[id]){
+document.getElementById("buy").innerHTML=`
+<h2>Thông tin mua acc</h2>
+Mã số acc:<div class="code">${codes[id]}</div>
+Bước 1: Chụp màn hình mã acc<br>
+Bước 2: Gửi mã qua Facebook<br>
+Bước 3: Thanh toán theo hướng dẫn admin<br><br>
+Liên hệ Facebook:<br>
+<a href="https://facebook.com/yourlink" target="_blank">Bấm vào đây</a>
+`;
+}
+</script>
+
+</body>
+</html>
