@@ -1,0 +1,55 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 9999;
+}
+
+.popup {
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px 15px 0 0;
+    padding: 20px;
+    animation: slideUp 0.3s ease;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.popup-header button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popup-links a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.hide-btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: #e53935;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
