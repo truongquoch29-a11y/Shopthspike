@@ -2,6 +2,50 @@
 <html lang="vi">
 <head>
     <style>
+.shop-header-wrapper {
+    padding: 30px 15px 20px 15px;
+    background: #f5f5f5;
+}
+
+.shop-header-box {
+    border-radius: 25px;
+    padding: 40px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #00c6ff, #00ff84, #ffe600);
+    color: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+/* Viền gradient ngoài */
+.shop-header-box::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, purple, red);
+    z-index: -1;
+}
+
+.shop-title-main {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.shop-title-name {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.shop-title-sub {
+    font-size: 18px;
+    font-weight: 500;
+}
+    </style>
+    <style>
 .notice-box {
     width: 100%;
     padding: 18px;
@@ -41,7 +85,15 @@ header{background:linear-gradient(90deg,#5f5fff,#7a5fff);color:white;padding:15p
 </head>
 
 <body>
-
+<div class="shop-header-wrapper">
+    <div class="shop-header-box">
+        <div class="shop-title-main">SHOP</div>
+        <div class="shop-title-name">THESPIKECROSS.SHOP</div>
+        <div class="shop-title-sub">
+            Uy tín – Nhanh chóng – An toàn – Chất lượng
+        </div>
+    </div>
+</div>
 <div class="notice-box">
     <div class="notice-header">
         ⚠️ THÔNG BÁO QUAN TRỌNG
