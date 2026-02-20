@@ -6,47 +6,51 @@
 <title>Chi tiết ACC 1</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    margin: 0;
+body{
+    margin:0;
+    background:#f2f2f2;
+    font-family:Arial, sans-serif;
 }
 
-.container {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 15px;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.container{
+    max-width:500px;
+    margin:20px auto;
+    padding:15px;
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Ảnh xếp dọc cùng kích thước */
-.image-gallery img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 12px;
+/* Ảnh xếp dọc - KHÔNG trượt */
+.image-gallery{
+    display:block;
+}
+
+.image-gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:12px;
 }
 
 /* Description */
-.description {
-    margin-top: 15px;
-    line-height: 1.5;
+.description{
+    margin-top:15px;
+    line-height:1.6;
 }
 
 /* Nút mua */
-.buy-btn {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    padding: 14px;
-    background: linear-gradient(90deg,#5f5fff,#8b5cf6);
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
+.buy-btn{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    padding:14px;
+    background:linear-gradient(90deg,#5f5fff,#8b5cf6);
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
 }
 </style>
 
@@ -55,7 +59,6 @@ body {
 
 <div class="container">
 
-    <!-- 5 ảnh xếp dọc -->
     <div class="image-gallery">
         <img src="images/A1m1.jpg">
         <img src="images/A1m2.jpg">
@@ -64,19 +67,16 @@ body {
         <img src="images/A1m5.jpg">
     </div>
 
-    <!-- Description -->
     <div class="description">
         <h2>Mô tả ACC 1</h2>
         <p>
             ACC Nishikawa S+ <br>
             13.000 VBALL <br>
             8.000.000 GOLD <br>
-            Bảo hành 10 ngày. <br>
-            Tài khoản full nâng cấp.
+            Bảo hành 10 ngày.
         </p>
     </div>
 
-    <!-- Nút mua ngay -->
     <a href="buy.html" class="buy-btn">MUA NGAY</a>
 
 </div>
