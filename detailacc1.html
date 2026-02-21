@@ -6,6 +6,46 @@
 <title>Chi tiết ACC 1</title>
 
 <style>
+    .acc-desc {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin: 20px 0;
+}
+
+.acc-desc h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    border-left: 6px solid #ff4d00;
+    padding-left: 12px;
+}
+
+.acc-desc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.acc-desc li {
+    font-size: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.acc-desc li::before {
+    content: "✔";
+    color: #ff4d00;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.acc-desc li.highlight {
+    color: #ff0000;
+    font-weight: 700;
+    font-size: 19px;
+}
     .btn-buy {
     display: block;
     width: 100%;
@@ -94,21 +134,21 @@ body{
         <img src="images/A1m5.jpg">
     </div>
 
-    <div class="description">
-        <h2>Mô tả ACC 1</h2>
-        <p>
-            NISHIKAWA +4 <br>
-            RYUHEON + 0 <br>
-            RAUL + 1<br>
-            SKIN HONGSI <br>
-            SKIN HANRA <br>
-            1K BALL <br>
-            2M8 GOLD <br>
-            log gg play<br>
-            Bảo hành 7 ngày.
-        </p>
-    </div>
+   <div class="acc-desc">
+    <h2>MÔ TẢ ACC 1</h2>
 
+    <ul>
+        <li><strong>NISHIKAWA</strong> +4</li>
+        <li><strong>RYUHEON</strong> +0</li>
+        <li><strong>RAUL</strong> +1</li>
+        <li>Skin Hongsi</li>
+        <li>Skin Hanra</li>
+        <li>1K Ball</li>
+        <li>2M8 Gold</li>
+        <li>Log Google Play</li>
+        <li class="highlight">Bảo hành 7 ngày</li>
+    </ul>
+</div>
     <a href="buy.html?acc=1" class="btn-buy">MUA NGAY</a>
 </div>
 
