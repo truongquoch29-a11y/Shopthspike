@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <div class="acc-hero">
+    <div class="acc-left">
+        <div class="acc-badge">ACC #1 • SẴN SÀNG</div>
+        <h1>ACC RAUL, RYU, NISHIKAWA</h1>
+        <p class="acc-sub">Log Google Play • Bảo hành 7 ngày</p>
+    </div>
+
+    <div class="acc-right">
+        <div class="price-box">
+            <span>Giá</span>
+            <strong>550.000đ</strong>
+        </div>
+        <a href="#mua" class="hero-buy">MUA NGAY</a>
+    </div>
+</div>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chi tiết ACC 1</title>
 
 <style>
+    .acc-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1f1f2e, #2a2a45);
+    color: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.acc-left h1 {
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+.acc-sub {
+    opacity: 0.85;
+    font-size: 14px;
+}
+
+.acc-badge {
+    display: inline-block;
+    background: #00c853;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.acc-right {
+    text-align: right;
+}
+
+.price-box span {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.price-box strong {
+    display: block;
+    font-size: 24px;
+    color: #ffb300;
+    margin: 5px 0 10px;
+}
+
+.hero-buy {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff0000, #ff7300);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(255,0,0,0.5);
+}
     .acc-desc {
     background: #ffffff;
     padding: 25px;
