@@ -119,17 +119,30 @@ header{background:linear-gradient(90deg,#5f5fff,#7a5fff);color:white;padding:15p
 }
 
 .logo-icon {
-    font-size: 28px;
     width: 48px;
     height: 48px;
     background: #4f46e5;
-    color: #fff;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 8px #4f46e5, 0 0 18px #6366f1;
-    animation: rotateGlow 3s linear infinite;
+    box-shadow: 0 0 10px #6366f1;
+}
+
+.ball {
+    display: inline-block;
+    font-size: 26px;
+    animation: spinBall 3s linear infinite;
+}
+
+/* chỉ xoay bóng */
+@keyframes spinBall {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 .logo-text {
     font-size: 28px;
@@ -137,19 +150,7 @@ header{background:linear-gradient(90deg,#5f5fff,#7a5fff);color:white;padding:15p
     color: #ffffff;
     letter-spacing: 2px;
 }
-    @keyframes rotateGlow {
-    0% {
-        transform: rotate(0deg);
-        box-shadow: 0 0 8px #4f46e5, 0 0 18px #6366f1;
-    }
-    50% {
-        box-shadow: 0 0 15px #6366f1, 0 0 30px #818cf8;
-    }
-    100% {
-        transform: rotate(360deg);
-        box-shadow: 0 0 8px #4f46e5, 0 0 18px #6366f1;
-    }
-}
+  
 </style>
 </head>
 
