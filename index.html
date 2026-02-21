@@ -96,10 +96,58 @@ header{background:linear-gradient(90deg,#5f5fff,#7a5fff);color:white;padding:15p
 .btn{display:block;text-align:center;padding:10px;margin-top:10px;border-radius:6px;text-decoration:none;font-weight:bold}
 .detail{border:2px solid #5f5fff;color:#5f5fff}
 .buy{background:linear-gradient(90deg,#5f5fff,#7a5fff);color:white}
+    .shop-header {
+    background: linear-gradient(90deg, #5f5cff, #9b59ff);
+    padding: 25px 0;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.logo-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.15);
+    padding: 12px 25px;
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+}
+
+.logo-icon {
+    font-size: 32px;
+    background: #fff;
+    color: #6c3cff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: rotateIcon 3s linear infinite;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+@keyframes rotateIcon {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 </style>
 </head>
 
 <body>
+    <div class="shop-header">
+    <div class="logo-box">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">SHOP TSC TH</span>
+    </div>
+</div>
     <script>
 function dongPopup() {
   document.getElementById("popupThongBao").style.display = "none";
