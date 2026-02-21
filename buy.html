@@ -3,122 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mua acc</title>
+<title>Mua Acc</title>
 
 <style>
-  .support-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  color: #fff;
-  animation: fadeInSupport 0.6s ease;
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f2f4f8;
 }
 
-.support-left {
-  flex: 1;
+/* ===== MÃ ACC ===== */
+.acc-header{
+  margin:25px;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  background:linear-gradient(135deg,#ff512f,#dd2476);
+  color:#fff;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
 }
 
-.support-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 8px;
+.acc-header h1{
+  margin:0;
+  font-size:26px;
+  letter-spacing:1px;
 }
 
-.support-left p {
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 0;
+/* ===== HƯỚNG DẪN ===== */
+.guide-box{
+  margin:25px;
+  padding:20px;
+  border-radius:18px;
+  background:#ffffff;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
 
-.support-right {
-  text-align: center;
-  background: #ffffff;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+.guide-box h2{
+  color:#e60023;
+  margin-bottom:10px;
 }
 
-.support-right img {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 10px;
+.guide-box ol{
+  padding-left:20px;
+  line-height:1.8;
 }
 
-.support-right span {
-  display: block;
-  margin-top: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #0072ff;
+/* ===== LIÊN HỆ ===== */
+.contact-box{
+  margin:25px;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  color:#fff;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
 }
 
-@keyframes fadeInSupport {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+.contact-btn{
+  display:inline-block;
+  margin:12px;
+  padding:12px 22px;
+  border-radius:30px;
+  background:#fff;
+  color:#0072ff;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
 }
 
-/* Responsive mobile */
-@media (max-width: 600px) {
-  .support-box {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .support-right {
-    margin-top: 15px;
-  }
+.contact-btn:hover{
+  transform:scale(1.05);
 }
-body{margin:0;font-family:Arial;background:#f2f2f2;padding:20px}
-.box{background:white;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
-.code{font-size:22px;font-weight:bold;color:red;margin:10px 0}
-a{color:#5f5fff;font-weight:bold}
+
+.qr-box{
+  margin-top:20px;
+}
+
+.qr-box img{
+  width:150px;
+  border-radius:12px;
+  background:#fff;
+  padding:10px;
+}
+
+/* ===== THANK YOU ===== */
+.thank-box{
+  margin:30px;
+  padding:25px;
+  text-align:center;
+  border-radius:20px;
+  font-size:22px;
+  font-weight:bold;
+  background:linear-gradient(135deg,#ffe259,#ffa751);
+  animation:glow 1.5s infinite alternate;
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+@keyframes glow{
+  from{box-shadow:0 0 10px rgba(255,165,0,0.5);}
+  to{box-shadow:0 0 25px rgba(255,100,0,0.9);}
+}
 </style>
 </head>
 
 <body>
-<div class="support-box">
-  <div class="support-left">
-    <div class="support-title">
-      💬 Hỗ trợ nhanh
-    </div>
-    <p>
-      Nếu không thể nhắn bên <b>Messenger</b> có thể liên hệ bên <b>Zalo</b> để được hỗ trợ.
-    </p>
-  </div>
 
-  <div class="support-right">
+<!-- MÃ ACC -->
+<div class="acc-header">
+  <h1 id="accTitle">Đang tải...</h1>
+</div>
+
+<!-- HƯỚNG DẪN -->
+<div class="guide-box">
+  <h2>🛒 CÁC BƯỚC MUA ACC</h2>
+  <ol>
+    <li>Chụp màn hình mã acc bạn muốn mua.</li>
+    <li>Gửi mã đó qua Facebook hoặc Zalo.</li>
+    <li>Thanh toán theo hướng dẫn của Admin.</li>
+  </ol>
+</div>
+
+<!-- LIÊN HỆ -->
+<div class="contact-box">
+  <h2>💬 LIÊN HỆ MUA NGAY</h2>
+
+  <a class="contact-btn" href="https://facebook.com/yourlink" target="_blank">
+    👉 Mua qua Facebook
+  </a>
+
+  <div class="qr-box">
+    <p>Hoặc quét mã Zalo để được hỗ trợ:</p>
     <img src="images/qr-zalo.png" alt="QR Zalo">
-    <span>Quét mã Zalo</span>
   </div>
 </div>
-<div class="box" id="buy"></div>
+
+<!-- CẢM ƠN -->
+<div class="thank-box">
+  ✨ XIN CẢM ƠN QUÝ KHÁCH ĐÃ ỦNG HỘ SHOP ✨
+</div>
 
 <script>
-const codes={
-1:"ACC 1: raul, nishi, ryuu",
-2:"ACC 2: nishi, ryuu",
-3:"ACC 3: nishi, raul
-};
+const params = new URLSearchParams(window.location.search);
+const acc = params.get("acc");
 
-const id=new URLSearchParams(window.location.search).get("id");
-
-if(codes[id]){
-document.getElementById("buy").innerHTML=`
-<h2>Thông tin mua acc</h2>
-Mã số acc:<div class="code">${codes[id]}</div>
-Bước 1: Chụp màn hình mã acc<br>
-Bước 2: Gửi mã qua Facebook<br>
-Bước 3: Thanh toán theo hướng dẫn admin<br><br>
-Liên hệ Facebook:<br>
-<a href="https://www.facebook.com/share/17tB4ghizk/?mibextid=wwXIfr" target="_blank">Bấm vào đây</a>
-`;
+if(acc){
+  document.getElementById("accTitle").innerText = "📌 MÃ SỐ ACC " + acc;
+}else{
+  document.getElementById("accTitle").innerText = "📌 KHÔNG XÁC ĐỊNH ACC";
 }
 </script>
 
