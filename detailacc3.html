@@ -1,11 +1,150 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <div class="acc-hero">
+    <div class="acc-left">
+        <div class="acc-badge">ACC #1 • SẴN SÀNG</div>
+        <h1>ACC RAUL, NISHIKAWA</h1>
+    </div>
+
+    <div class="acc-right">
+        <div class="price-box">
+            <span>Giá</span>
+            <strong>3000.000đ</strong>
+        </div>
+    </div>
+</div>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chi tiết ACC 1</title>
 
 <style>
+    .acc-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1f1f2e, #2a2a45);
+    color: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.acc-left h1 {
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+.acc-sub {
+    opacity: 0.85;
+    font-size: 14px;
+}
+
+.acc-badge {
+    display: inline-block;
+    background: #00c853;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.acc-right {
+    text-align: right;
+}
+
+.price-box span {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.price-box strong {
+    display: block;
+    font-size: 24px;
+    color: #ffb300;
+    margin: 5px 0 10px;
+}
+
+.hero-buy {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff0000, #ff7300);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(255,0,0,0.5);
+}
+    .acc-desc {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin: 20px 0;
+}
+
+.acc-desc h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    border-left: 6px solid #ff4d00;
+    padding-left: 12px;
+}
+
+.acc-desc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.acc-desc li {
+    font-size: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.acc-desc li::before {
+    content: "✔";
+    color: #ff4d00;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.acc-desc li.highlight {
+    color: #ff0000;
+    font-weight: 700;
+    font-size: 19px;
+}
+    .btn-buy {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(45deg, #ff0000, #ff7300);
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    animation: pulse 1.2s infinite;
+}
+
+.btn-buy:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.9);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+}
 body{
     margin:0;
     background:#f2f2f2;
@@ -67,23 +206,22 @@ body{
         <img src="images/A3m5.jpg">
     </div>
 
-    <div class="description">
-        <h2>Mô tả ACC 3</h2>
-        <p>
-            Nishikawa +2 <br>
-            RAUL + 0 <br>
-            SKIN JEAHEON  <br>
-            SKIN ISABEL <br>
-            SKIN HONGSI <br>
-            7M GOLD <br>
-            4K BALL <br>
-            log gg <br>
-            Bảo hành 7 ngày.
-        </p>
-    </div>
+   <div class="acc-desc">
+    <h2>MÔ TẢ ACC 3</h2>
 
-    <a class="btn buy" href="buy.html?acc=3">MUA NGAY</a>
-
+    <ul>
+        <li><strong>NISHIKAWA</strong> +2</li>
+        
+        <li><strong>RAUL</strong> +0</li>
+        <li>Skin Hongsi</li>
+        <li>Skin Jeaheon/li>
+        <li>4K8 Ball</li>
+        <li>7m Gold</li>
+        <li>Log Google</li>
+        <li class="highlight">Bảo hành 7 ngày</li>
+    </ul>
+</div>
+    <a href="buy.html?acc=3" class="btn-buy">MUA NGAY</a>
 </div>
 
 </body>
