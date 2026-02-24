@@ -227,7 +227,6 @@ window.onload = function() {
   <div class="theme-option">
     <label><input type="radio" name="theme" value="light"> Light</label>
     <label><input type="radio" name="theme" value="dark"> Dark</label>
-    <label><input type="radio" name="theme" value="semi-dark"> Semi Dark</label>
   </div>
 
   <hr>
@@ -326,19 +325,17 @@ window.onload = function() {
 
 body.light{
   background:#ffffff;
-  color:#000;
+  color:#000000;
 }
 
 body.dark{
-  background:#111;
-  color:#fff;
+  background:#111111;
+  color:#ffffff;
 }
 
-body.semi-dark{
-  background:#1e1e1e;
-  color:#ddd;
+body.dark *{
+  color:#ffffff !important;
 }
-
 /* ================= BOXED ================= */
 
 .boxed{
@@ -349,71 +346,22 @@ body.semi-dark{
 </style>
 
 <script>
-
-/* ================= ELEMENTS ================= */
-
-const btn = document.getElementById("themeBtn");
-const panel = document.getElementById("themePanel");
-const overlay = document.getElementById("overlay");
-const closeBtn = document.getElementById("closeTheme");
-
-/* ================= OPEN ================= */
-
-btn.onclick = () => {
-  panel.classList.add("active");
-  overlay.classList.add("active");
-  btn.classList.add("rotate");
-};
-
-/* ================= CLOSE ================= */
-
-function closePanel(){
-  panel.classList.remove("active");
-  overlay.classList.remove("active");
-  btn.classList.remove("rotate");
-}
-
-closeBtn.onclick = closePanel;
-overlay.onclick = closePanel;
-
-/* ================= THEME SWITCH ================= */
-
 document.querySelectorAll("input[name='theme']").forEach(radio=>{
   radio.addEventListener("change", function(){
-    document.body.className = this.value;
+
+    document.body.classList.remove("light","dark");
+    document.body.classList.add(this.value);
+
     localStorage.setItem("theme", this.value);
   });
 });
 
-/* Load saved theme */
-
 const savedTheme = localStorage.getItem("theme");
 if(savedTheme){
-  document.body.className = savedTheme;
+  document.body.classList.add(savedTheme);
   const radio = document.querySelector(`input[value='${savedTheme}']`);
   if(radio) radio.checked = true;
 }
-
-/* ================= WIDTH ================= */
-
-const widthMode = document.getElementById("widthMode");
-
-widthMode.addEventListener("change", function(){
-  if(this.value === "boxed"){
-    document.body.classList.add("boxed");
-    localStorage.setItem("widthMode", "boxed");
-  }else{
-    document.body.classList.remove("boxed");
-    localStorage.setItem("widthMode", "full");
-  }
-});
-
-const savedWidth = localStorage.getItem("widthMode");
-if(savedWidth === "boxed"){
-  document.body.classList.add("boxed");
-  widthMode.value = "boxed";
-}
-
 </script>
 </body>
 </html>
