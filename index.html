@@ -214,5 +214,206 @@ window.onload = function() {
 <a class="btn detail" href="detailacc3.html?id=2">XEM CHI TIẾT</a>
 </div>
 </div>
+    <!-- Nút cài đặt -->
+<button id="themeBtn">⚙</button>
+
+<!-- Overlay -->
+<div id="overlay"></div>
+
+<!-- Panel Theme -->
+<div id="themePanel">
+  <h3>Theme Customizer</h3>
+
+  <div class="theme-option">
+    <label><input type="radio" name="theme" value="light"> Light</label>
+    <label><input type="radio" name="theme" value="dark"> Dark</label>
+    <label><input type="radio" name="theme" value="semi-dark"> Semi Dark</label>
+  </div>
+
+  <hr>
+
+  <div class="theme-option">
+    <label>Content Width</label>
+    <select id="widthMode">
+      <option value="full">Full Width</option>
+      <option value="boxed">Boxed</option>
+    </select>
+  </div>
+
+  <button id="closeTheme">Đóng</button>
+</div>
+
+<style>
+
+/* ================= BUTTON ================= */
+
+#themeBtn{
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10001;
+  transition: transform 0.4s ease;
+}
+
+#themeBtn.rotate{
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* ================= OVERLAY ================= */
+
+#overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 9998;
+}
+
+#overlay.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ================= PANEL ================= */
+
+#themePanel{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: #ffffff;
+  padding: 25px;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(.25,.8,.25,1);
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+#themePanel.active{
+  transform: translateX(0);
+}
+
+#themePanel h3{
+  margin-bottom: 20px;
+}
+
+.theme-option{
+  margin-bottom: 20px;
+}
+
+#closeTheme{
+  width: 100%;
+  padding: 10px;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= THEME ================= */
+
+body.light{
+  background:#ffffff;
+  color:#000;
+}
+
+body.dark{
+  background:#111;
+  color:#fff;
+}
+
+body.semi-dark{
+  background:#1e1e1e;
+  color:#ddd;
+}
+
+/* ================= BOXED ================= */
+
+.boxed{
+  max-width:1200px;
+  margin:auto;
+}
+
+</style>
+
+<script>
+
+/* ================= ELEMENTS ================= */
+
+const btn = document.getElementById("themeBtn");
+const panel = document.getElementById("themePanel");
+const overlay = document.getElementById("overlay");
+const closeBtn = document.getElementById("closeTheme");
+
+/* ================= OPEN ================= */
+
+btn.onclick = () => {
+  panel.classList.add("active");
+  overlay.classList.add("active");
+  btn.classList.add("rotate");
+};
+
+/* ================= CLOSE ================= */
+
+function closePanel(){
+  panel.classList.remove("active");
+  overlay.classList.remove("active");
+  btn.classList.remove("rotate");
+}
+
+closeBtn.onclick = closePanel;
+overlay.onclick = closePanel;
+
+/* ================= THEME SWITCH ================= */
+
+document.querySelectorAll("input[name='theme']").forEach(radio=>{
+  radio.addEventListener("change", function(){
+    document.body.className = this.value;
+    localStorage.setItem("theme", this.value);
+  });
+});
+
+/* Load saved theme */
+
+const savedTheme = localStorage.getItem("theme");
+if(savedTheme){
+  document.body.className = savedTheme;
+  const radio = document.querySelector(`input[value='${savedTheme}']`);
+  if(radio) radio.checked = true;
+}
+
+/* ================= WIDTH ================= */
+
+const widthMode = document.getElementById("widthMode");
+
+widthMode.addEventListener("change", function(){
+  if(this.value === "boxed"){
+    document.body.classList.add("boxed");
+    localStorage.setItem("widthMode", "boxed");
+  }else{
+    document.body.classList.remove("boxed");
+    localStorage.setItem("widthMode", "full");
+  }
+});
+
+const savedWidth = localStorage.getItem("widthMode");
+if(savedWidth === "boxed"){
+  document.body.classList.add("boxed");
+  widthMode.value = "boxed";
+}
+
+</script>
 </body>
 </html>
