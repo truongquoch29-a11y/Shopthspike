@@ -3,6 +3,18 @@
 <head>
     
     <style>
+        body{
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+body.loaded{
+    opacity: 1;
+}
+
+body.fade-out{
+    opacity: 0;
+}
         /* Overlay */
 #page-loader{
   position:fixed;
@@ -268,21 +280,26 @@ window.onload = function() {
     <div id="page-loader">
   <div class="loader"></div>
 </div>
-    <script>
-document.querySelectorAll(".view-btn").forEach(btn=>{
-  btn.addEventListener("click", function(e){
-    e.preventDefault();
 
-    const url = this.href;
-    const loader = document.getElementById("page-loader");
+<script>
+/* Animate khi bấm xem chi tiết */
+document.querySelectorAll(".view-btn").forEach(btn => {
+    btn.addEventListener("click", function(e){
+        e.preventDefault();
+        const url = this.href;
 
-    loader.classList.add("active");
-    document.body.classList.add("fade-out");
+        document.body.classList.add("fade-out");
 
-    setTimeout(()=>{
-      window.location.href = url;
-    }, 500);
-  });
+        setTimeout(()=>{
+            window.location.href = url;
+        }, 500);
+    });
+});
+
+/* Khi trang được load hoặc quay lại bằng nút back mobile */
+window.addEventListener("pageshow", function(){
+    document.body.classList.remove("fade-out");
+    document.body.classList.add("loaded");
 });
 </script>
 </body>
