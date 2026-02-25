@@ -268,5 +268,22 @@ window.onload = function() {
     <div id="page-loader">
   <div class="loader"></div>
 </div>
+    <script>
+document.querySelectorAll(".view-btn").forEach(btn=>{
+  btn.addEventListener("click", function(e){
+    e.preventDefault();
+
+    const url = this.href;
+    const loader = document.getElementById("page-loader");
+
+    loader.classList.add("active");
+    document.body.classList.add("fade-out");
+
+    setTimeout(()=>{
+      window.location.href = url;
+    }, 500);
+  });
+});
+</script>
 </body>
 </html>
